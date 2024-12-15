@@ -33,11 +33,3 @@ for i in range (1, 51):
 df = pd.DataFrame(all_books)
 df.to_csv('books.csv', index=False)
 df.to_excel('books.xlsx', index=False)
-
-
-
-
-        # print(availability)
-        
-
-    

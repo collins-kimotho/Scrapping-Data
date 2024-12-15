@@ -1,6 +1,6 @@
 # Book Scraper
 
-This project is a web scraper that extracts information about books from a website and stores it in a CSV file. The extracted information includes the title, rating, price, and availability of each book.
+This project is a web scraper that extracts information about books from a book catalog website (https://books.toscrape.com/) and stores it in a CSV file. The extracted information includes the title, rating, price, and availability of each book.
 
 ## Project Structure
 
