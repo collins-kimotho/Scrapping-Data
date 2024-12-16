@@ -3,6 +3,7 @@ from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 from bs4 import BeautifulSoup
 import time
+import pandas as pd
 
 # Create an instance of Options
 options = Options()
@@ -28,6 +29,31 @@ time.sleep(5)
 
 # Get page source and parse with BeautifulSoup
 soup = BeautifulSoup(driver.page_source, 'html.parser')
+
+prices = soup.find('table', id='simpleTable').find('tbody', id='simpleTableBody').find_all('tr', class_='highlight-row')
+
+print(len(prices))
+
+all_prices = []
+
+for price in prices:
+    industries = price.find('th').text
+    quarters = price.find_all('td', class_='align-right nowrap')
+    quarters = [int(q.text.replace(',', '')) for q in quarters]
+    all_prices.append([industries] + quarters)
+
+# Define column names
+columns = ['Industry', 'Q1', 'Q2', 'Q3', 'Q4', 'Q5']
+
+# Create DataFrame
+df = pd.DataFrame(all_prices, columns=columns)
+df.to_csv('prices.csv', index=False)
+df.to_excel('prices.xlsx', index=False)
+
+# print(df)
+
+
+
 
 
 

@@ -1,0 +1,38 @@
+Industry,Q1,Q2,Q3,Q4,Q5
+,,,,,
+All industries  [T001]4 ,2230388.0,2235777.0,2247038.0,2259353.0,2264449.0
+Goods-producing industries  [T002]4 ,575458.0,576974.0,574736.0,578609.0,576461.0
+Service-producing industries  [T003]4 ,1656867.0,1660725.0,1674747.0,1683100.0,1690700.0
+Business sector industries  [T004] ,1804320.0,1812604.0,1817048.0,1825470.0,1826950.0
+Non-business sector industries  [T007] ,425893.0,423035.0,430016.0,433738.0,437304.0
+Industrial production  [T010]4 ,379345.0,381812.0,379279.0,382639.0,379845.0
+Non-durable manufacturing industries  [T011]4 ,94980.0,95171.0,95149.0,95235.0,94438.0
+Durable manufacturing industries  [T012]4 ,117773.0,116211.0,113618.0,113112.0,110777.0
+Information and communication technology sector  [T013]4 ,131947.0,131901.0,132285.0,132962.0,132416.0
+Energy sector  [T016]4 ,150517.0,153177.0,152063.0,155665.0,155885.0
+Industrial production (1950 definition)  [T017]4 ,371024.0,373418.0,370795.0,374110.0,371282.0
+Public Sector  [T018]4 ,462940.0,460537.0,467732.0,471697.0,475593.0
+Content and media sector  [T019]4 ,12503.0,12267.0,12725.0,12506.0,12370.0
+All industries (except cannabis sector)  [T020]4 ,2223141.0,2228422.0,2239788.0,2252039.0,2257031.0
+Cannabis sector  [T021]4 ,7626.0,7741.0,7666.0,7779.0,7930.0
+All industries (except unlicensed cannabis sector)  [T024]4 ,2227613.0,2233012.0,2244257.0,2256493.0,2261593.0
+"Agriculture, forestry, fishing and hunting  [11] ",38083.0,38791.0,39632.0,40309.0,40911.0
+"Mining, quarrying, and oil and gas extraction  [21] ",111844.0,114519.0,114504.0,117375.0,116763.0
+Utilities  [22] ,44923.0,45318.0,45106.0,45285.0,46123.0
+Construction  [23] ,166079.0,164291.0,163945.0,163697.0,163935.0
+Manufacturing  [31-33] ,213003.0,211580.0,208899.0,208461.0,205291.0
+Wholesale trade  [41] ,118522.0,119899.0,120178.0,120218.0,119071.0
+Retail trade  [44-45] ,113680.0,115052.0,114716.0,114543.0,115857.0
+Transportation and warehousing  [48-49] ,98789.0,99941.0,100585.0,101250.0,101325.0
+Information and cultural industries  [51] ,75767.0,75902.0,76576.0,76729.0,76496.0
+Finance and insurance  [52] ,161986.0,163071.0,164328.0,165952.0,167900.0
+Real estate and rental and leasing  [53] ,294187.0,294414.0,297235.0,298378.0,300313.0
+"Professional, scientific and technical services  [54] ",163263.0,163543.0,164264.0,165066.0,165460.0
+Management of companies and enterprises  [55] ,1250.0,1110.0,1019.0,940.0,874.0
+"Administrative and support, waste management and remediation services  [56] ",58587.0,58586.0,58820.0,58466.0,58098.0
+Educational services  [61] ,122651.0,118438.0,122857.0,124774.0,125339.0
+Health care and social assistance  [62] ,176679.0,177737.0,179673.0,181086.0,182098.0
+"Arts, entertainment and recreation  [71] ",18617.0,18589.0,18718.0,18908.0,18839.0
+Accommodation and food services  [72] ,45544.0,46191.0,46470.0,46715.0,46606.0
+Other services (except public administration)  [81] ,44185.0,44308.0,44510.0,44616.0,44657.0
+Public administration  [91] ,163574.0,164235.0,165146.0,165810.0,168113.0
