@@ -30,9 +30,14 @@ try:
 except Exception as e:
     print(f"Button not clicked: {e}")
 
+# Wait for the tables to load
+time.sleep(3)
 
-rows = driver.find_elements(By.TAG_NAME('tr'))
-print(len(rows))
+try:
+    rows = driver.find_elements(By.TAG_NAME, 'tr')
+    print(len(rows))
+except Exception as e:
+    print(f"An error has occured while fetching rows: {e}")
 time.sleep(10)
 
 driver.quit()
