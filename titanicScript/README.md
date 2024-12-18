@@ -1,6 +1,6 @@
 # Titanic Script Scraper
 
-This project scrapes the full transcript of the movie "Titanic" from the website `subslikescript.com` and saves it to a text file.
+This project scrapes the full transcript of the movie "Titanic" from the website [subslikescript.com](subslikescript.com) and saves it to a text file.
 
 ## Requirements
 
