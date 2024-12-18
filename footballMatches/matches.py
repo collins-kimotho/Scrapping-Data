@@ -30,6 +30,9 @@ try:
 except Exception as e:
     print(f"Button not clicked: {e}")
 
+
+rows = driver.find_elements(By.TAG_NAME('tr'))
+print(len(rows))
 time.sleep(10)
 
 driver.quit()
