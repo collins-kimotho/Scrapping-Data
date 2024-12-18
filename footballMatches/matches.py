@@ -30,6 +30,6 @@ try:
 except Exception as e:
     print(f"Button not clicked: {e}")
 
-time.sleep(5)
+time.sleep(10)
 
 driver.quit()
