@@ -4,10 +4,7 @@ from selenium.webdriver.support.ui import Select
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
-
 import time
-
-
 
 
 url = 'https://www.adamchoi.co.uk/overs/detailed'
@@ -18,9 +15,6 @@ driver = webdriver.Chrome(service=service)
 
 driver.get(url)
 
-# time.sleep(5)
-
-
 try:
     dropdown = WebDriverWait(driver, 5).until(
         EC.presence_of_element_located((By.ID, "country"))
@@ -30,7 +24,11 @@ try:
 except Exception as e:
     print(f"An error occurred: {e}")
 
-
+try:
+    all_matches_button = driver.find_element(By.XPATH, '//label[@analytics-event="All matches"]')
+    all_matches_button.click()
+except Exception as e:
+    print(f"Button not clicked: {e}")
 
 time.sleep(5)
 
