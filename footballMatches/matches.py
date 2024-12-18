@@ -5,6 +5,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 import time
+import pandas as pd
 
 
 url = 'https://www.adamchoi.co.uk/overs/detailed'
@@ -37,7 +38,28 @@ try:
     rows = driver.find_elements(By.TAG_NAME, 'tr')
     print(len(rows))
 except Exception as e:
-    print(f"An error has occured while fetching rows: {e}")
-time.sleep(10)
+    print(f"An error has occurred while fetching rows: {e}")
+
+data = []
+
+for row in rows:
+    try:
+        date = row.find_element(By.XPATH, './td[1]').text
+        home_team = row.find_element(By.XPATH, './td[2]').text
+        score = row.find_element(By.XPATH, './td[3]').text
+        away = row.find_element(By.XPATH, './td[4]').text
+        data.append({
+            'Date': date,
+            'Home Team': home_team,
+            'Score': score,
+            'Away Team': away
+        })
+    except Exception as e:
+        print(f"An error occurred while fetching cell: {e}")
+
 
 driver.quit()
+
+df = pd.DataFrame(data)
+df.to_csv('matches.csv', index=False)
+df.to_excel('matches.xlsx', index=False)
