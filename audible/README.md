@@ -20,8 +20,8 @@ This project is a web scraper for extracting information about best-selling audi
 
 1. Clone the repository:
     ```sh
-    git clone https://github.com/yourusername/audible-bestsellers-scraper.git
-    cd audible-bestsellers-scraper
+    git clone https://github.com/collins-kimotho/Scrapping-Data.git
+    cd audible
     ```
 
 2. Create a virtual environment and activate it:
