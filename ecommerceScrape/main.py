@@ -1,37 +1,35 @@
-import pandas as pd
 from selenium import webdriver
-from bs4 import BeautifulSoup
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support.wait import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
 import time
+import pandas as pd
 
 url = 'https://cullenjewellery.com/engagement-rings'
 
 # Set up the Selenium WebDriver
-options = webdriver.ChromeOptions()
-options.add_argument('--headless')
-options.add_argument('--no-sandbox')
-options.add_argument('--disable-dev-shm-usage')
-driver = webdriver.Chrome(options=options)
+# options = webdriver.ChromeOptions()
+# options.add_argument('--headless')
+# options.add_argument('--no-sandbox')
+# options.add_argument('--disable-dev-shm-usage')
+driver = webdriver.Chrome()
+driver.maximize_window()
 
 # Load the webpage
 driver.get(url)
-time.sleep(5)  # Wait for the JavaScript to load
 
-# Get the page source and parse it with BeautifulSoup
-soup = BeautifulSoup(driver.page_source, 'html.parser')
+try:
+    button = WebDriverWait(driver, 10).until(
+        EC.presence_of_element_located((By.XPATH, '//button[contains(@class, "load-more")]'))
+    )
+    driver.execute_script("arguments[0].click();", button)
+except Exception as e:
+    print(f'Cannot find button: {e}')
+
+container = driver.find_element(By.XPATH, '//ul[@class = "root Thumbs svelte-d2ewq4"]')
+rings = container.find_elements(By.TAG_NAME, 'li')
+print(len(rings))
+
+
+time.sleep(10)
 driver.quit()
-
-rings = soup.find('div', class_='results flex column limit-width svelte-128ewnv').find('ul', class_='root Thumbs svelte-d2ewq4').find_all('li', class_='root disable-user-select Thumb svelte-19gl59f interactive')
-
-ring_data = []
-
-for ring in rings:
-    dic = {}
-    dic['name'] = ring.find('div', class_='description svelte-19gl59f').find('h2', class_='svelte-19gl59f').text
-    dic['price'] = ring.find('div', class_='price svelte-19gl59f').text.replace('STARTING', "").replace('USD', "").replace(",","").strip()
-    ring_data.append(dic)
-
-df = pd.DataFrame(ring_data)
-df.to_csv('ring_data.csv', index=False)  # Save the DataFrame to a CSV file
-df.to_excel('ring_data.xlsx', index=False)  # Save the DataFrame to an Excel file
-
-print("Data saved to ring_data.csv and ring_data.xlsx")
