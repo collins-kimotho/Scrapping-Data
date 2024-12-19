@@ -48,7 +48,7 @@ while current_page <= last_page:
 
     for book in all_books:
         try:
-            title = book.find_element(By.XPATH, './/h3[contains(@class, "bc-heading")]').text
+            title = book.find_element(By.XPATH, './/h3[contains(@class, "bc-heading")]/a').text
             author = book.find_element(By.XPATH, './/li[contains(@class, "authorLabel")]').text.replace("By:", "").strip()
             length = book.find_element(By.XPATH, './/li[contains(@class, "runtimeLabel")]').text.replace("Length:", "").strip()
             try:
