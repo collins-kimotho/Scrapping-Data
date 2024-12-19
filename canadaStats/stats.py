@@ -51,11 +51,5 @@ df.to_csv('prices.csv', index=False)
 df.to_excel('prices.xlsx', index=False)
 
 # print(df)
-
-
-
-
-
-
 # Close the browser
 driver.quit()
