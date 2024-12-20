@@ -24,3 +24,9 @@ class QuoteScrape(scrapy.Spider):
             items['tag'] = tag
 
             yield items
+
+        # Pagination
+        next_page = response.css('li.text a::attr(href)').get()
+
+        if next_page is not None:
+            yield response.follow(next_page, callback=self.parse)
