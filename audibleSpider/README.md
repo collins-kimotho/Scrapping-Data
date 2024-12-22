@@ -23,16 +23,19 @@ audibleSpider/
 
 1. **Clone the repository:**
     ```bash
-    git clone <repository_url>
-    cd audibleSpider
+    git clone https://github.com/collins-kimotho/Scrapping-Data.git
+    cd audibleSpider/audibleSpider/audibleSpider/spiders/audible.py
     ```
 
 2. **Install the required dependencies:**
     ```bash
-    pip install scrapy lxml cssselect parsel w3lib twisted pyopenssl cryptography
-    ```
+    pip install -r requirements.txt
 
 3. **Run the spider:**
+    ```bash
+    scrapy crawl audible
+    ```
+    You can also use the bash file created to run the script
     ```bash
     ./run.sh
     ```
@@ -50,12 +53,11 @@ The spider is designed to handle pagination and will automatically follow the "n
 
 ## Output
 
-The scraped data is yielded in a structured format and can be further processed or stored as needed.
+The scraped data is yielded in a structured format and can be further processed or stored as needed. Run the commands;
+```bash
+./run.sh -o <filename.csv> # To store as csv
+```
 
 ## License
 
 This project is licensed under the MIT License. See the LICENSE file for more details.
-
----
-
-Feel free to customize this README file further based on your specific project details and requirements.
