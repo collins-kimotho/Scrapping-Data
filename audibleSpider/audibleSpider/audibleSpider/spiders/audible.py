@@ -22,7 +22,7 @@ class AudibleSpider(scrapy.Spider):
             }
 
         pagination = response.xpath('//ul[contains(@class, "pagingElements")]')
-        next_page_url = pagination.xpath('.//span[contains(class, "nextButton")]/a/@href').get()
+        next_page_url = pagination.xpath('.//span[contains(@class, "nextButton")]/a/@href').get()
         button_disabled = pagination.xpath('.//span[contains(@class , "nextButton")]/a/@aria-disabled').get()
     
 
